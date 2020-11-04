@@ -1,0 +1,22 @@
+{{#partial "content"}}
+
+    <div class="container row">
+        <div class="col-md-4">
+            {{#if food}}
+                <p>{{food.donationType}}</p>
+                <a href="/deletedonation/{{food.id}}" class="btn btn-danger">Delete</a>
+            {{/if}}
+        </div>
+        <div class="col-md-8">
+            {{#if location}}
+                {{#each location}}
+                    <p>{{location}}</p>
+                    <a href="/location/{{id}}" class="btn btn-info">Details</a>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
