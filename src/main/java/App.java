@@ -16,7 +16,7 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        String connectionString = "jdbc:postgresql://localhost:5432/moringa";
+        String connectionString = "jdbc:postgresql://localhost:5432/foodbank";
         Connection con;
         Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access");
 
