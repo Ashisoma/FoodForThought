@@ -15,4 +15,6 @@ public class Donation {
     public void setDonationType(String donationType) {
         this.donationType = donationType;
     }
+
+
 }

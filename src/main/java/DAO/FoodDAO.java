@@ -1,4 +1,4 @@
 package DAO;
 
-public class FoodDAO {
+public interface FoodDAO {
 }

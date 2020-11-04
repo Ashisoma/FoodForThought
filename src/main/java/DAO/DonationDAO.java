@@ -1,4 +1,10 @@
 package DAO;
 
-public class DonationDAO {
+import models.Donation;
+
+import java.util.List;
+
+public interface DonationDAO {
+
+    List<Donation> getAllDonationLocation();
 }
