@@ -1,5 +1,6 @@
 package DAO;
 
+
 import models.Donation;
 import models.Food;
 import org.sql2o.Connection;
@@ -55,7 +56,7 @@ public class Sql2oFoodDAO implements FoodDAO{
 
     @Override
     public void deleteFoodBankLocation(int id) {
-        String sql = "DELETE FROM foodBankLocation WHERE id=:id";
+        String sql = "DELETE FROM foodBankLocations WHERE id=:id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("id",id)
@@ -68,7 +69,7 @@ public class Sql2oFoodDAO implements FoodDAO{
 
     @Override
     public void updateFoodBankLocation(int id, String location) {
-        String sql = "UPDATE foodBankLocation SET location = :location WHERE id=:id";
+        String sql = "UPDATE foodBankLocations SET location = :location WHERE id=:id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("id",id)
@@ -78,4 +79,7 @@ public class Sql2oFoodDAO implements FoodDAO{
             System.out.println(ex);
         }
     }
+
+
+
 }
