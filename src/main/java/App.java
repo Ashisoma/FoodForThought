@@ -28,7 +28,7 @@ public class App {
 
         get("/", (request, response) -> {
             model.put("foodBankLocations", foodDOA.getFoodBankLocation());
-            model.put("donationTypes", donationDAO.getAllDonationLocation());
+            model.put("donationTypes", donationDAO.getAllDonationType());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 

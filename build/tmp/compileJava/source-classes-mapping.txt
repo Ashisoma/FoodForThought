@@ -1,14 +1,14 @@
 models/Donation.java
  models.Donation
-DAO/DonationDAO.java
- DAO.DonationDAO
-DAO/Sql2oDonationDAO.java
- DAO.Sql2oDonationDAO
-models/Food.java
- models.Food
-DAO/FoodDAO.java
- DAO.FoodDAO
 DAO/Sql2oFoodDAO.java
  DAO.Sql2oFoodDAO
 App.java
  App
+models/Food.java
+ models.Food
+DAO/FoodDAO.java
+ DAO.FoodDAO
+DAO/Sql2oDonationDAO.java
+ DAO.Sql2oDonationDAO
+DAO/DonationDAO.java
+ DAO.DonationDAO
