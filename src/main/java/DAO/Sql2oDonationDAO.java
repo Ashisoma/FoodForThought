@@ -29,7 +29,7 @@ public class Sql2oDonationDAO implements DonationDAO{
 
     @Override
     public void addLocation(Donation donation){
-        String sql = "INSERT INTO foodBankLocations (location) VALUES (:location)";
+        String sql = "INSERT INTO donationTypes (foodItem) VALUES (:foodItem)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql,true).bind(donation)
                     .executeUpdate().getKey();
