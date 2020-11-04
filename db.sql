@@ -12,5 +12,6 @@ location varchar
 
 CREATE TABLE donationTypes(
 id serial PRIMARY KEY,
-foodItem varchar
+foodItem varchar,
+cash int
 );

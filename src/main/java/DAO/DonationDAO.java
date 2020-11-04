@@ -5,10 +5,17 @@ import models.Donation;
 import java.util.List;
 
 public interface DonationDAO {
+//
+//    List<Donation> getAllDonationLocation();
+//
+//    void addLocation(Donation donation);
+//
+//    Donation getDonationById(int id);
+//
 
-    List<Donation> getAllDonationLocation();
+    List<Donation> getAllDonationType();
 
-    void addLocation(Donation donation);
+    void addDonation(Donation donation);
 
     Donation getDonationById(int id);
 

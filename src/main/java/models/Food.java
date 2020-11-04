@@ -4,7 +4,7 @@ public class Food extends Donation{
     private String foodBankLocation;
 
     public Food(String donationType, String foodBankLocation) {
-        super(donationType);
+        super(donationType, donationType);
         this.foodBankLocation = foodBankLocation;
     }
 

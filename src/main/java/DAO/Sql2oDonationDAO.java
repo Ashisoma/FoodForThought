@@ -16,8 +16,8 @@ public class Sql2oDonationDAO implements DonationDAO{
         this.sql2o = sql2o;
     }
     @Override
-    public List<Donation> getAllDonationLocation(){
-        String sql = "SELECT * FROM foodbank";
+    public List<Donation> getAllDonationType(){
+        String sql = "SELECT * FROM donationTypes";
         try (Connection con = sql2o.open()){
             return con.createQuery(sql)
                     .executeAndFetch(Donation.class);
@@ -28,8 +28,8 @@ public class Sql2oDonationDAO implements DonationDAO{
     }
 
     @Override
-    public void addLocation(Donation donation){
-        String sql = "INSERT INTO donationTypes (foodItem) VALUES (:foodItem)";
+    public void addDonation(Donation donation){
+        String sql = "INSERT INTO donationTypes (foodItem, cash) VALUES (:foodItem, :cash)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql,true).bind(donation)
                     .executeUpdate().getKey();
