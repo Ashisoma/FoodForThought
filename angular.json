@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FoodForThought"
+    }
+  },
+  "defaultProject": "FoodForThought",
+  "cli": {
+    "analytics": false
+  }
 }
