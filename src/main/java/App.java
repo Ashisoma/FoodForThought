@@ -30,5 +30,13 @@ public class App {
             model.put("donationTypes", donationDAO.getAllDonationLocation());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/location", (request, response) -> {
+            return new ModelAndView(model, "foodbank-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/location", (request, response) -> {
+            String
+        });
     }
 }
