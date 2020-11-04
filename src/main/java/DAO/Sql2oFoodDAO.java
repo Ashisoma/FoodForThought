@@ -18,7 +18,7 @@ public class Sql2oFoodDAO implements FoodDAO{
     }
     @Override
     public List<Food> getFoodBankLocation(){
-        String sql = "SELECT * FROM foodBank";
+        String sql = "SELECT * FROM foodBankLocations";
         try (Connection con = sql2o.open()){
             return con.createQuery(sql)
                     .executeAndFetch(Food.class);
