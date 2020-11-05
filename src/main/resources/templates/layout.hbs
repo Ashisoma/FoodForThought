@@ -14,13 +14,42 @@
 
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            {{#block "navlinks"}}
-            {{/block}}
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Food Bank
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/location">All Food Banks</a>
+                        <a class="dropdown-item" href="/location/new">Add Food Bank</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Donations
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/donation-type">All Donations</a>
+                        <a class="dropdown-item" href="/donation-type/new">Add Donations</a>
+                    </div>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Registration
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/registration/new">Add reg</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
 <div class="container">
     {{#block "content"}}
+
     {{/block}}
 </div>
 

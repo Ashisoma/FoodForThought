@@ -1,6 +1,5 @@
-
 {{#partial "content"}}
-    {{#if registration}}
+
     <table class="table">
         <thead>
         <tr>
@@ -11,10 +10,8 @@
             <th scope="col">DONATION TYPE</th>
         </tr>
         </thead>
-    {{#each registration}}
         <tbody>
         <tr>
-
             <th scope="row">1</th>
             <td>{{name}}</td>
             <td>{{email}}</td>
@@ -22,8 +19,8 @@
             <td>{{donationType}}</td>
         </tr>
         </tbody>
-           {{/each}}
     </table>
-    {{/if}}
+
 {{/partial}}
+
 {{> layout.hbs}}

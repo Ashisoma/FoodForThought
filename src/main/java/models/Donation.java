@@ -5,7 +5,7 @@ public class Donation {
     private String donationType;
     private int id;
 
-    public Donation(String type, String donationType) {
+    public Donation(String donationType) {
         this.donationType = donationType;
     }
 

@@ -5,13 +5,12 @@ CREATE DATABASE foodbank;
 
 \c foodbank
 
-CREATE TABLE foodBankLocations(
-id serial PRIMARY KEY,
-location varchar
-);
 
-CREATE TABLE donationTypes(
+CREATE TABLE registration(
 id serial PRIMARY KEY,
-foodItem varchar,
-cash int
+name varchar,
+email varchar,
+password varchar,
+location varchar,
+donationType varchar
 );

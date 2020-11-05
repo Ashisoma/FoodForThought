@@ -28,23 +28,48 @@ public class Sql2oFoodDAO implements FoodDAO{
         }
     }
 
-    @Override
-    public void addFoodBankLocation(Food location){
-        String sql = "INSERT INTO foodBankLocations (location) VALUES (:location)";
-        try(Connection con = sql2o.open()){
-            int id = (int) con.createQuery(sql,true).bind(location)
-                    .executeUpdate().getKey();
-            location.setId(id);
+    public List<Food> getAllFoodBankDonation(){
+        String sql = "SELECT * FROM donationTypes";
+        try (Connection con = sql2o.open()){
+            return con.createQuery(sql)
+                    .executeAndFetch(Food.class);
         }catch (Sql2oException ex){
             System.out.println(ex);
+            return null;
         }
     }
 
     @Override
-    public Food getFoodbankLocationById(int id) {
+    public void addFoodDonation(Food food){
+        String sql = "INSERT INTO donationTypes (donationTypes, location) VALUES (:donationTypes, :location)";
+        try(Connection con = sql2o.open()){
+            int id = (int) con.createQuery(sql,true)
+                    .throwOnMappingFailure(false)
+                    .bind(food)
+                    .executeUpdate().getKey();
+            food.setId(id);
+        }catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
+    @Override
+    public void addFoodBankLocation(Food location){
+        String sql = "INSERT INTO foodBankLocations (location) VALUES (:location)";
+//        try(Connection con = sql2o.open()){
+//            int id = (int) con.createQuery(sql,true).throwOnMappingFailure(false).bind(location)
+//                    .executeUpdate().getKey();
+//            location.setId(id);
+//        }catch (Sql2oException ex){
+//            System.out.println(ex);
+//        }
+    }
+
+    @Override
+    public Food getFoodBankLocationById(int id) {
         String sql = "SELECT * FROM foodBankLocations WHERE id=:id";
         try(Connection con = sql2o.open()){
             return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
                     .addParameter("id",id)
                     .executeAndFetchFirst(Food.class);
         }catch (Sql2oException ex) {
@@ -59,6 +84,7 @@ public class Sql2oFoodDAO implements FoodDAO{
         String sql = "DELETE FROM foodBankLocations WHERE id=:id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
+                    .throwOnMappingFailure(false)
                     .addParameter("id",id)
                     .executeUpdate();
         } catch (Sql2oException ex) {
@@ -72,6 +98,7 @@ public class Sql2oFoodDAO implements FoodDAO{
         String sql = "UPDATE foodBankLocations SET location = :location WHERE id=:id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
+                    .throwOnMappingFailure(false)
                     .addParameter("id",id)
                     .addParameter("location",location)
                     .executeUpdate();

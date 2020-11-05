@@ -1,11 +1,15 @@
 package models;
 
-public class Food extends Donation{
+public class Food {
     private String foodBankLocation;
+    private int id;
 
     public Food(String donationType, String foodBankLocation) {
-        super(donationType, donationType);
         this.foodBankLocation = foodBankLocation;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFoodBankLocation() {
@@ -16,4 +20,7 @@ public class Food extends Donation{
         this.foodBankLocation = foodBankLocation;
     }
 
+    public int getId() {
+        return id;
+    }
 }
