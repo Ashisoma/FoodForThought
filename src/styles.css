@@ -1,4 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: 'Tangerine', cursive; 
+    background-color: #2B9348;
+}
+#navinfo{
+    font-family: 'PT Serif', serif;
+    font-size: 25px; 
+    background-color: #007f5f;
+}
+.navinfo2{
+    justify-content: flex-end;
+}
+.footerone{
+    background-color: #80B918;
+    color: black;
+    font-family: 'PT Serif', serif;
+}
+.formone{
+    font-family: 'PT Serif', serif;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type=password]{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 30px;
+    margin-top: 10px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 10%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .carousel-fade .carousel-item, .carousel-item img  {
+    max-height: 80vh;
+  }
+  .tableheading{
+      background-color: #d2e6b3;
+      color: black;
+  }
+  .tablecolor{
+      background-color: #9ae19d;
+  }
+  #tablefont{
+    font-family: 'PT Serif', serif;
+  }
+  .headingsize{
+      font-weight: bolder;
+      font-size: 20px;
+      font-style: italic;
+  }
+  .contentsize{
+      font-size: 17px;
+  }
+  #datainfo{
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+  }
+ 
