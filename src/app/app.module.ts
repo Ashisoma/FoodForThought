@@ -5,8 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
+
 import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
+import { FoodbankComponent } from './foodbank/foodbank.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     BlogComponent,
     RegistrationComponent,
-    NavbarComponent
+    NavbarComponent,
+    FoodbankComponent
   ],
   imports: [
     BrowserModule,
