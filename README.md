@@ -20,6 +20,9 @@ For Spark API generation
 1. Forking the spark1 branch of this repository to your repositories.
 2. Cloning the forked banch or cloning directly from my repository.
 3. Finally run the project on your IntelliJIDEA `$ gradle build` and `$ gradle run` in your projects terminal.
+For Angular
+- Click here [Angular branch](https://github.com/Ashisoma/FoodForThought/blob/Angular/README.md)
+
 ## Expected Behavior
 
 
