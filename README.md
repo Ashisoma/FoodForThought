@@ -1,7 +1,11 @@
 # FoodForThought
 
-## Collaboators
+## Team
  1. Onesmus Okali
+ 2. Beatrice Wambui
+ 3. Hamisi Andale
+ 4. Amodoi Peter
+ 
  
  
  ## Application Set-Up
