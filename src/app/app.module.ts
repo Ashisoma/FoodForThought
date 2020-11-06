@@ -10,7 +10,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { FoodbankComponent } from './foodbank/foodbank.component';
+
+import { DonationComponent } from './donation/donation.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -18,9 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     BlogComponent,
+    FoodbankComponent,
+    DonationComponent,
     RegistrationComponent,
     NavbarComponent,
     FoodbankComponent
+
   ],
   imports: [
     BrowserModule,
