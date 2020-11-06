@@ -5,8 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
+
+import { RegistrationComponent } from './registration/registration.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 import { FoodbankComponent } from './foodbank/foodbank.component';
+
 import { DonationComponent } from './donation/donation.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +23,16 @@ import { DonationComponent } from './donation/donation.component';
     HomeComponent,
     BlogComponent,
     FoodbankComponent,
-    DonationComponent
+    DonationComponent,
+    RegistrationComponent,
+    NavbarComponent,
+    FoodbankComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
