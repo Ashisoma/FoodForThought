@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Food For Thought{{/block}}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="navbar static-top navbar-expand-lg navbar-light bg-light">
+    <a href="/"><img src="/images/logo-nav.png" class="navbar-brand" alt="Logo" id="Logo" width="200px" height="120px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Food Bank
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/location">All Food Banks</a>
+                        <a class="dropdown-item" href="/location/new">Add Food Bank</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Donations
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/donation-type">All Donations</a>
+                        <a class="dropdown-item" href="/donation-type/new">Add Donations</a>
+                    </div>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Registration
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/registration/new">Add reg</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {{#block "content"}}
+
+    {{/block}}
+</div>
+
+{{#block "footer"}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+{{/block}}

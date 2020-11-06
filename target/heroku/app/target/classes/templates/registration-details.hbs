@@ -1,0 +1,32 @@
+{{#partial "content"}}
+<!--    <ul class="list-group list-group-flush">-->
+<!--        <h5 class="card-title">{{heroes.heroName}}</h5>-->
+<!--        <li class="list-group-item">{{heroes.superPower}}</li>-->
+<!--        <li class="list-group-item">{{heroes.weakness}}</li>-->
+<!--        <li class="list-group-item">{{heroes.age}}</li>-->
+<!--    </ul>-->
+{{#if registration}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">LOCATION</th>
+            <th scope="col">DONATION TYPE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>{{registration.name}}</td>
+            <td>{{registration.email}}</td>
+            <td>{{location}}</td>
+            <td>{{donationType}}</td>
+        </tr>
+        </tbody>
+    </table>
+{{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

@@ -1,11 +1,5 @@
-import DAO.RegistrationDao;
-import DAO.Sql2oDonationDAO;
-import DAO.Sql2oFoodDAO;
-
 import DAO.Sql2oRegistrationDao;
 import com.google.gson.Gson;
-import models.Donation;
-import models.Food;
 import models.Registration;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -17,24 +11,34 @@ import java.util.*;
 import static spark.Spark.*;
 
 public class App {
-
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
     public static void main(String[] args) {
-        staticFileLocation("/public");
 
+        port(getHerokuAssignedPort());
+        staticFileLocation("/public");
 
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:postgresql://localhost:5432/foodbank";
+        //String connectionString = "jdbc:postgresql://localhost:5432/foodbank";
         Connection con;
-        Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access");
 
-        Sql2oFoodDAO foodDOA = new Sql2oFoodDAO(sql2o);
-        Sql2oDonationDAO donationDAO = new Sql2oDonationDAO(sql2o);
+        String connectionString = "jdbc:postgresql://ec2-54-158-222-248.compute-1.amazonaws.com:5432/d66u5i4ru73bt6";
+        Sql2o sql2o = new Sql2o(connectionString,"ivflkzpzdtzxch","a451779a3ce5b5bcbf0758c25c3e1a811c2cba0df4358e3f7348d3fbcca70e41");
+
+       // Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access");
+
         Map<String, Object> model = new HashMap<>();
         List<String> myStrings = new ArrayList<>();
         Sql2oRegistrationDao sql2oRegistrationDao = new Sql2oRegistrationDao(sql2o);
         //Registration registration = new Registration();
 
+        //String connectionString = "jdbc:postgresql://ec2-18-211-86-133.compute-1.amazonaws.com:5432/d8seknpio0qb3o";
 
         // API ROUTES
 
@@ -68,24 +72,9 @@ public class App {
 
 
 
-        get("/", (request, response) -> {
-            model.put("foodBankLocations", foodDOA.getFoodBankLocation());
-            model.put("donationTypes", donationDAO.getAllDonationType());
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
 
-        get("/location/new", (request, response) -> {
-            return new ModelAndView(model, "foodbank-form.hbs");
-        }, new HandlebarsTemplateEngine());
 
-        post("/location/new", (request, response) -> {
-            String foodBankLocation = request.queryParams("location");
-            String donationType = request.queryParams("foodItem");
-            Food newFoodLocation = new Food(donationType, foodBankLocation);
-            foodDOA.addFoodBankLocation(newFoodLocation);
-            model.put("foodBankLocations", foodDOA.getFoodBankLocation());
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
+
 
         get("/registration/new", (request, response) -> {
             model.put("registration", sql2oRegistrationDao.getAll());
@@ -106,7 +95,8 @@ public class App {
 
         get("/registration/:id", (req, res) -> {
             int id = Integer.parseInt(req.params("id"));
-            model.put("donationTypes", sql2oRegistrationDao.donorById(id));
+            System.out.println(sql2oRegistrationDao.donorById(id));
+            model.put("registration", sql2oRegistrationDao.donorById(id));
             return new ModelAndView(model, "registration-details.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -136,29 +126,5 @@ public class App {
             return new ModelAndView(model, "registration-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-
-        get("/donation-type/:id", (req, res) -> {
-            int id = Integer.parseInt(req.params("id"));
-            model.put("foodBankLocations", donationDAO.getDonationById(id));
-            model.put("donationTypes", foodDOA.getFoodBankLocationById(id));
-            return new ModelAndView(model, "donationtype-details.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/deletelocation/:id", (req, res) -> {
-            int id = Integer.parseInt(req.params("id"));
-            foodDOA.deleteFoodBankLocation(id);
-            sql2oRegistrationDao.deleteDonationById(id);
-            model.put("foodBankLocations", foodDOA.getFoodBankLocation());
-            model.put("donationTypes", donationDAO.getAllDonationType());
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/deletedonation-type/:id", (req, res) -> {
-            int id = Integer.parseInt(req.params("id"));
-            donationDAO.deleteDonationById(id);
-            model.put("foodBankLocations", foodDOA.getFoodBankLocation());
-            model.put("donationTypes", donationDAO.getAllDonationType());
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
     }
 }

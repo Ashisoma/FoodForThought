@@ -1,6 +1,5 @@
 package DAO;
 
-import models.Food;
 import models.Registration;
 
 import java.util.List;
