@@ -1,0 +1,27 @@
+<form (ngSubmit)='submitDonation()' #goalForm='ngForm'>
+    <div class="form-group">
+
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newDonation.name" name="name" #name='ngModel' required>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          <p>Name is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <label for="email">Email</label>
+        <input class="form-control" id="email" rows="4" [(ngModel)]="newDonation.email" name="email" #email="ngModel" required>
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+          <p>Email is required</p>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <label for="complete">Date</label>
+        <input type='date' id="give" [(ngModel)]="newDonation.giveDate" name="giveDate" #giveDate="ngModel" required>
+        <div [hidden]="giveDate.valid || giveDate.pristine" class="alert alert-danger">
+          <p>Date is required</p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+
