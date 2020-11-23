@@ -9,7 +9,6 @@ import { Give } from 'src/app/give';
 export class DonationComponent implements OnInit {
   array:object;
   name:string;
-  website:string;
   phone:string;
   address:string;
   email:string;

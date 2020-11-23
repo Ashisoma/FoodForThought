@@ -4,5 +4,5 @@ export class Give {
     //email: string;
     //location: string;
     //donationType: string;
-    constructor(public id: number, public name: string,email:string, public location: string, public donationType: string ){}
+    constructor(public id: number, public name: string, public email:string, public location: string, public donationType: string ){}
 }
